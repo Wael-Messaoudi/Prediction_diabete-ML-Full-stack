@@ -1,0 +1,100 @@
+/*.home-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.home-container h1 {
+  color: #0d6efd;
+  margin-bottom: 1.5rem;
+}
+
+.home-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0b5ed7;
+}*/
+
+/* 💫 Background animé */
+/* 🌟 Background subtil animé blanc */
+.animated-background {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  padding-top: 0;   /* Supprime l'espace supérieur */
+  margin-top: 0;
+
+  background: linear-gradient(135deg, #ffffff, #f8f9ff, #eef3ff);
+  background-size: 300% 300%;
+  animation: lightMove 10s ease infinite;
+}
+
+@keyframes lightMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🏠 Contenu */
+.home-container {
+  max-width: 600px;
+  padding: 2.5rem;
+  margin-top: 0;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* 🩺 Titre */
+.home-container h1 {
+  color: #0d6efd;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* ✍️ Texte */
+.home-container p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* 🔘 Bouton moderne */
+.btn {
+  padding: 0.8rem 2.2rem;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+}
+
+.btn:hover {
+  background-color: #0b5ed7;
+  transform: translateY(-2px);
+}

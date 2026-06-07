@@ -1,0 +1,53 @@
+<!--<div class="container">
+  <h2>📊 Résultat de la prédiction</h2>
+  <div *ngIf="result" class="result-card"
+       [class.result-high]="result.prediction === 'Diabétique'"
+       [class.result-low]="result.prediction !== 'Diabétique'">
+    <h3>{{ result.prediction }}</h3>
+    <p>Probabilité : <strong>{{ (result.probability * 100).toFixed(1) }} %</strong></p>
+    <p>Niveau de risque : <strong>{{ result.risk_level }}</strong></p>
+    <p class="message">{{ result.message }}</p>
+  </div>-->
+<!-- Heure locale (client) -->
+<!--<div class="time-info" *ngIf="clientTime">
+    <p><strong>Prédiction effectuée à :</strong> {{ clientTime | date:'medium':'fr-FR' }}</p>
+  </div>
+
+  <button (click)="goHome()" class="btn-secondary">Nouvelle prédiction</button>
+</div>-->
+
+
+<div class="container">
+  <h2 class="title">📊 Résultat de la prédiction</h2>
+
+  <div *ngIf="result" class="result-card" [class.result-high]="result.prediction === 'Diabétique'"
+    [class.result-low]="result.prediction !== 'Diabétique'">
+
+    <h3 class="prediction">{{ result.prediction }}</h3>
+
+    <div class="info-line">
+      <span>Probabilité diabétique :</span>
+      <strong>{{ (result.probabilities.diabetic * 100).toFixed(1) }} %</strong>
+    </div>
+
+    <div class="info-line">
+      <span>Probabilité non diabétique :</span>
+      <strong>{{ (result.probabilities.non_diabetic * 100).toFixed(1) }} %</strong>
+    </div>
+
+    <div class="info-line">
+      <span>Niveau de risque :</span>
+      <strong>{{ result.risk_level }}</strong>
+    </div>
+
+    <p class="message" *ngIf="result.message">{{ result.message }}</p>
+  </div>
+
+  <div class="time-info" *ngIf="clientTime">
+    <p><strong>Prédiction effectuée à :</strong> {{ clientTime | date:'medium':'fr-FR' }}</p>
+  </div>
+
+  <button (click)="goHome()" class="btn-secondary">
+    🔄 Nouvelle prédiction
+  </button>
+</div>

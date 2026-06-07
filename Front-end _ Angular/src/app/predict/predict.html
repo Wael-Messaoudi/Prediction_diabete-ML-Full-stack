@@ -1,0 +1,102 @@
+<!--<div class="container">
+  <h2>🔍 Formulaire de prédiction</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+    <div class="form-group">
+      <label>Grossesses</label>
+      <input type="number" formControlName="Pregnancies" min="0" max="20">
+    </div>
+    <div class="form-group">
+      <label>Glucose (mg/dL)</label>
+      <input type="number" formControlName="Glucose" min="50" max="250" required>
+    </div>
+    <div class="form-group">
+      <label>Pression artérielle</label>
+      <input type="number" formControlName="BloodPressure" min="30" max="150">
+    </div>
+    <div class="form-group">
+      <label>Épaisseur peau (mm)</label>
+      <input type="number" formControlName="SkinThickness" min="0" max="100">
+    </div>
+    <div class="form-group">
+      <label>Insuline (mu U/ml)</label>
+      <input type="number" formControlName="Insulin" min="0" max="900">
+    </div>
+    <div class="form-group">
+      <label>IMC</label>
+      <input type="number" step="0.1" formControlName="BMI" min="10" max="60" required>
+    </div>
+    <div class="form-group">
+      <label>Facteur génétique</label>
+      <input type="number" step="0.01" formControlName="DiabetesPedigreeFunction" min="0" max="2.5" required>
+    </div>
+    <div class="form-group">
+      <label>Âge</label>
+      <input type="number" formControlName="Age" min="15" max="100" required>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid" class="btn">Obtenir le résultat</button>
+  </form>
+</div>-->
+
+<div class="predict-wrapper">
+  <div class="predict-card">
+
+    <h2>🔍 Formulaire de prédiction</h2>
+    <p class="subtitle">Veuillez remplir les informations pour effectuer l'analyse.</p>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+
+      <div class="form-group">
+        <label>Grossesses [0-17]</label>
+        <input type="number" formControlName="Pregnancies" min="0" max="20">
+      </div>
+
+      <div class="form-group">
+        <label>Glucose [50-200](mg/dL) </label>
+        <input type="number" formControlName="Glucose" min="50" max="250" required>
+      </div>
+
+      <div class="form-group">
+        <label>Pression artérielle [30-130] mm Hg</label>
+        <input type="number" formControlName="BloodPressure" min="30" max="150">
+      </div>
+
+      <div class="form-group">
+        <label>Épaisseur peau [0-100](mm)</label>
+        <input type="number" formControlName="SkinThickness" min="0" max="100">
+      </div>
+
+      <div class="form-group">
+        <label>Insuline [0-850](mu U/ml)</label>
+        <input type="number" formControlName="Insulin" min="0" max="900">
+      </div>
+
+      <div class="form-group">
+        <label>IMC [15-60]</label>
+        <input type="number" step="0.1" formControlName="BMI" min="10" max="60" required>
+      </div>
+
+      <div class="form-group">
+        <label>Facteur génétique [0.0-2.4]</label>
+        <input type="number" step="0.01" formControlName="DiabetesPedigreeFunction" min="0" max="2.5" required>
+      </div>
+
+      <div class="form-group">
+        <label>Age [20-80]</label>
+        <input type="number" formControlName="Age" min="15" max="100" required>
+      </div>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="error-message">
+        ⚠️ {{ errorMessage }}
+      </div>
+
+      <button type="submit" [disabled]="form.invalid || isLoading" class="btn">
+        <span *ngIf="!isLoading">Obtenir le résultat</span>
+        <span *ngIf="isLoading">⏳ Analyse en cours...</span>
+      </button>
+
+    </form>
+
+  </div>
+</div>
